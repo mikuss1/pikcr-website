@@ -1,0 +1,356 @@
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+  :root {
+    --white: #FFFEF6;
+    --black: #1e1e1e;
+    --shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    --b-radius: 10px;
+  }
+
+  * {
+    font-family: 'Inter', 'Helvetica', sans-serif;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-size: 24px;
+  }
+
+  section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--white);
+  }
+
+  .hero {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .hero-text {
+    margin: 0;
+    padding: 0;
+  }
+
+  .ht1 {
+    transform: translateY(-200%);
+    animation: fallFromTop 1s ease forwards;
+  }
+
+  .ht2 {
+    transform: translateY(-300%);
+    animation: fallFromTop 1s ease forwards;
+  }
+
+  .ht3 {
+    transform: translateY(-400%);
+    animation: fallFromTop 1s ease forwards;
+  }
+
+  .ht4 {
+    transform: translateY(-500%);
+    animation: fallFromTop 1s ease forwards;
+  }
+
+  @keyframes fallFromTop {
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  h1 {
+    font-weight: 900;
+    font-size: 5em;
+    margin: 0;
+
+    text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+
+  .outline {
+    font-style: italic;
+    color: var(--white);
+    /* Set the text color */
+    text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+    margin-right: 0.666em;
+  }
+
+  .top-img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    /* Set initial position below the screen */
+    width: 100%;
+    max-width: 100%;
+    z-index: 99;
+    display: flex;
+    max-height: 90vh;
+    width: auto;
+    animation: riseFromBottom 1s ease 0s forwards;
+  }
+
+  @keyframes riseFromBottom {
+    to {
+      transform: translateX(-50%) translateY(0);
+      /* Move to the original position */
+    }
+  }
+
+  .btn-container {
+    position: absolute;
+    bottom: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+  }
+
+  .btn {
+    position: relative;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    background-color: var(--white);
+    color: var(--black);
+    font-weight: 500;
+    border: none;
+    border-radius: var(--b-radius);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transform: scale(0);
+    animation: scaleUp 1s ease-in forwards;
+    transition: all 0.5s ease;
+  }
+
+  @keyframes scaleUp {
+    to {
+      transform: scale(1);
+      /* Scale up to the original size */
+    }
+  }
+
+  .material-symbols-outlined {
+    vertical-align: -4px;
+    font-variation-settings:
+      'FILL' 0,
+      'wght' 500,
+      'GRAD' 0,
+      'opsz' 24
+  }
+
+  .btn:hover {
+    transform: translateY(-5px);
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  /*Povprasevanje*/
+  .povprasevanje {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    padding: 4em 1em;
+    padding-bottom: 1em;
+    margin: 4em;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    border-radius: var(--b-radius);
+    z-index: 9999;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    cursor: pointer;
+    font-size: 1em;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+
+  .close-button:hover {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    cursor: pointer;
+    font-size: 1em;
+    opacity: 0.5;
+  }
+
+  .btn-send {
+    padding: 0.5em 1em;
+    font-weight: 500;
+    border: none;
+    border-radius: var(--b-radius);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 1em;;
+    background-color: var(--black);
+    color: var(--white);
+    transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-send:hover {
+    background-color: var(--white);
+    color: var(--black);
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 5;
+  }
+
+  .grid-item {
+    padding: 5px;
+  }
+
+  label {
+    display: flex;
+    justify-content: right;
+    font-size: 1.5em;
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  input {
+    padding-left: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 2.5833em;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    /* Remove input focus outline if needed */
+    transform: translateY(-24px);
+  }
+
+  input::placeholder {
+    font-weight: 800;
+    /* Adjust placeholder font weight if needed */
+    color: var(--black);
+    /* Adjust placeholder color if needed */
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  .checkbox label {
+    display: inline-block;
+    padding: 0.2em 0.5em;
+    opacity: 0.5;
+    cursor: pointer;
+    font-size: 2.5833em;
+    font-style: normal;
+    padding-left: 1em;
+    border-radius: 5px;
+    transform: translateY(-32px);
+  }
+
+  input[type="radio"]:checked+label {
+    opacity: 1;
+    color: var(--black);
+  }
+
+
+  @media screen and (max-width: 1280px){
+    section {
+      padding: 0;
+    }
+    .povprasevanje {
+      margin: 0em ;
+      width: 100%;
+      height: 100%;
+    }
+    .povprasevanje .grid-container {
+      display: flex;
+      flex-direction: column;
+    }
+    input {
+      padding-left: 0em;
+      font-size: 1.5em;
+
+    }
+    label {
+      justify-content: left;
+      font-size: 1em;      
+      margin-bottom: 0.5em;
+    }
+    .checkbox label {
+      padding: 0.2em 0.5em;
+    }
+    .btn-send {
+      position: absolute;
+      bottom: 1em;
+    }
+  }
+  @media screen and (max-width: 775px) {
+    body {
+        font-size: 24px;
+    }
+    h1 {
+      display: inline;
+      font-size: 4em;
+    }
+    .hero {
+      transform: translateY(-20%);
+    }
+    .outline {
+      margin-right: 0.3em;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    body {
+        font-size: 18px;
+    }
+    h1 {
+      display: inline;
+      font-size: 4em;
+    }
+    .hero {
+      transform: translateY(-50%);
+    }
+    .outline {
+      margin-right: 0.3em;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    body {
+      font-size: 16px;
+    }
+    .hero {
+      transform: translateY(-60%);
+    }
+    h1 {
+      font-size: 4em;
+    }
+  }
+  @media screen and (max-width: 410px) {
+    body {
+      font-size: 16px;
+    }
+    .hero {
+      transform: translateY(-70%);
+    }
+    h1 {
+      font-size: 3.5em;
+    }
+  }
+  
